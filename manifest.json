@@ -1,0 +1,18 @@
+{
+    "manifest_version": 3,
+    "name": "Crypto Wallet",
+    "version": "1.0",
+    "description": "This is a crypto wallet chrome extension. Developed by Harshal Gahlot",
+    "action": {
+        "default_popup": "index.html" 
+    },
+    
+    "permissions": ["activeTab"],
+
+    "content_scripts": [ {
+        "js": ["content_script.js"],
+        "matches": [
+            "*://www.google.com/*"
+        ]
+    } ]
+}

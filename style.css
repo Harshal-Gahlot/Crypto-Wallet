@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'mainfont';
+    src: url(fonts/fonts/joy_bold.otf);
+}
+
+@font-face{
+font-family: 'subfont';
+src: url(assets/fonts/good_text.otf);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    background-color: #000;
+    color: azure;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    width: 350px;
+    height: 550px;
+    display: flex;
+    justify-content: center;
+    border: 2px solid white;
+}
