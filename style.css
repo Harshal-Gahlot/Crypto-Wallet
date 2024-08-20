@@ -80,6 +80,28 @@ body {
     outline: none;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+form div  {
+    background: blueviolet;
+    border-radius: 100px;
+    border:none;
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
+}
+
+#unlock:hover {
+    /* border-bottom: 2px solid blueviolet ;
+    border-right: 2px solid blueviolet ; */
+    border: none;
+    border-top: 2px solid rgb(255, 255, 255) ;
+    border-left: 2px solid rgb(255, 255, 255) ;
+}
+
 li {
     list-style-type: none;
 }
