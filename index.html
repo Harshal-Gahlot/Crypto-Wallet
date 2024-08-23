@@ -22,24 +22,40 @@
             </form>
         </section>
         
-        <nav></nav>
-
+        
         <main id="main">
-            <h1 id="ammount">0.05 SOL</h1>
-            <p>Public key</p>
-            <div>
-                <p>0xe8...916F</p>
-                <img src="" alt="" />
-            </div>
+            <nav id="left_nav" class="main_nav left_nav">
+                <img src="assets/icons/Vector (1).svg" alt="">
+                <img src="assets/icons/Vector (2).svg" alt="">
+                <img src="assets/icons/Vector (3).svg" alt="">
+            </nav>
+            
+            <article id="main_content">
+                <h1 id="ammount">0.05 SOL</h1>
+                <div class="pubkey_outer">
+                    <p>Public key</p>
+                    <div class="pubkey_inner">
+                        <p>0xe8...916F</p>
+                        <img src="" alt="" />
+                    </div>
+                </div>
+            </article>
+            
+            <nav id="right_nav" class="main_nav right_nav">
+                <img src="assets/icons/Vector (4).svg" alt="">
+                <img src="assets/icons/Vector.svg" alt="">
+                <img src="assets/icons/sq.svg" alt="">
+            </nav>
         </main>
+        
 
         <li id=account_manager>
             <ul class="account account1">
-                <img src="/assets/sq.svg" style="border-radius: 100%;" alt="" />
+                <img src="/assets/icons/sq.svg" style="border-radius: 100%;" alt="" />
                 <p>Acc 1</p>
             </ul>
             <ul id="add_account_container" class="account">
-                <img src="/assets/Vector.svg" alt="" />
+                <img src="/assets/icons/plus.svg" alt="" />
                 <li id="add_account_toggle">
                     <ul id="add_account_headding">Add Account</ul>
                     <ul class="currencies">SOL</ul>
@@ -49,5 +65,6 @@
         </li>
 
         <script src="script.js"></script>
+        <script src="backend.ts"></script>
     </body>
 </html>

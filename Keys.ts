@@ -1,4 +1,5 @@
-import { keypair } from "@solana/web3/.js";
+// Dont mind me. it's gonna get replaced by backend.js
+import { Keypair } from "@solana/web3.js";
 import nacl from "tweetnacl";
 import { generateMnemonic, mnemonicToSeedSync } from "bip39";
 
@@ -17,10 +18,10 @@ export function getNewKeypair() {
 // how to sign?
 // const signature = nacl.sign.detached(message, privateKey);
 
-export function verifyKeys(message, privateKey) {
-    const result = nacl.sign.detached.verify(
-        message,
-        signature,
-        keypair.publicKey.toBytes()
-    );
-    return result
+// export function verifyKeys(message, privateKey) {
+//     const result = nacl.sign.detached.verify(
+//         message,
+//         signature,
+//         keypair.publicKey.toBytes()
+//     );
+//     return result
