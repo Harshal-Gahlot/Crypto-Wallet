@@ -1,22 +1,28 @@
 // const fs = require('fs');
 
-function addAccount() {
+function addAccount(currency) {
     ACCOUNT_COUNT ++
     const account = document.createElement('ul')
-    account.classList = `account account${ACCOUNT_COUNT}`
-    account.innerHTML =`<img src="/assets/sq.svg" style="border-radius: 100%;" alt="" /><p>Acc ${ACCOUNT_COUNT}</p>`
-    addAccountContainer.before(account)
-    const pubKey = getTrimedKey()
-    main.innerHTML = `
-    <!--send request to server of ammount in a publicKey-->
-    <h1 id="ammount">${getCryptoCurrency(pubKey)}</h1>
-    <p>Public key</p>
-    <div>
-    <!--Get public key from DB and mnemonic-->
+    account.classList = `account_card account${ACCOUNT_COUNT}`
+    account.innerHTML =`<div class="account_card_display">
+                    <img class="${currency}" src="/assets/icons/${currency}.svg" alt="" />
+                    <p>${currency}</p>
+                </div>
+                <div class="account_card_info">
+                    <p>5.0 ${currency}</p>
+                </div>`
+    addAccountContainer.previousElementSibling.before(account)
+    // const pubKey = getTrimedKey()
+    // main.innerHTML = `
+    // <!--send request to server of ammount in a publicKey-->
+    // <h1 id="ammount">${getCryptoCurrency(pubKey)}</h1>
+    // <p>Public key</p>
+    // <div>
+    // <!--Get public key from DB and mnemonic-->
 
-        <p>${pubKey}</p>
-        <img src="" alt="" />
-    </div>`
+    //     <p>${pubKey}</p>
+    //     <img src="" alt="" />
+    // </div>`
 }
 function getCryptoCurrency(pubKey) {
     const CONST_POWER = 100000000000000000
@@ -39,23 +45,23 @@ function getTrimedKey() {
 
 ACCOUNT_COUNT = 1;
 
+const accountManager = document.getElementById('account_manager');
 const passwordContainer = document.getElementById('password_container');
 const unlockBtn = document.getElementById('unlock');
+
 const main = document.getElementById('main');
-const accountManager = document.getElementById('account_manager');
 const addAccountContainer = document.getElementById('add_account_container');
-const currencies = document.getElementsByClassName('currencies');
+const addAccountDiv = document.querySelectorAll('.add_account_div');
 
 // verifyPassword('Hii')
-
-console.log(unlockBtn);
 
 unlockBtn.addEventListener('click', () => {
     document.getElementsByTagName('body')[0].removeChild(passwordContainer);
 })
 
-for (i=0; i<=currencies.length; i++) {
-    console.log(currencies[i])
-    currencies[i].addEventListener('click', addAccount);
-    console.log(currencies[i])
-}
+addAccountDiv.forEach(ele => {
+    ele.addEventListener('click', () => {
+        console.log(ele.lastElementChild.innerHTML)
+        addAccount(ele.lastElementChild.innerHTML)
+    })
+})

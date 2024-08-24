@@ -15,7 +15,7 @@ class MyWallet{
     }
     generateNewAccount(currency="SOL") {
         const cur = this.getCurrencyCode(currency);
-        this.path = `m/44'/${cur}'/${this.accountNumber}'/0'`;
+        this.path = `m/44'/${cur}'/0'/0'/${this.accountNumber}'`;
         console.log(this.path)
         const derivedSeed = derivePath(this.path, this.seed.toString("hex")).key;
         const privateKeyUint8Array64byte = nacl.sign.keyPair.fromSeed(derivedSeed).secretKey;
@@ -45,15 +45,15 @@ class MyWallet{
 }
 // this mnemonic is for development purpose, it nither has nor will have no money. I will delete and forget it after i'm done.
 // acount 1:
-sol_pub_key1 = "J7Kmbc6su6xBQATFiqXP9RirfHXNYbevtDdpXy7Eyso2"
-eth_pub_key1 = "0xb78f9955b0F634Ee276a791B70Be5AfE3CDee82e"
+const sol_pub_key1 = "J7Kmbc6su6xBQATFiqXP9RirfHXNYbevtDdpXy7Eyso2"
+const eth_pub_key1 = "0xb78f9955b0F634Ee276a791B70Be5AfE3CDee82e"
 // account 2:
-sol_pub_key2 = "EgTZxFP1iJGDP4mJzpezBeMg7eCKYRf1XuEWWCtCm1As"
-eth_pub_key2 = "0xAbCad69514fA9aE66f8C7C4D9fD92b4375Be27CB"
+const sol_pub_key2 = "EgTZxFP1iJGDP4mJzpezBeMg7eCKYRf1XuEWWCtCm1As"
+const eth_pub_key2 = "0xAbCad69514fA9aE66f8C7C4D9fD92b4375Be27CB"
 
 // mnemonic are so funny :>
 const UserWallet = new MyWallet(128, "nut music stem shop company dignity cloud warfare dream deputy food wedding");
-console.log(UserWallet.generateNewAccount());
-console.log(UserWallet.generateNewAccount());
 console.log(UserWallet.generateNewAccount("ETH"));
 console.log(UserWallet.generateNewAccount("ETH"));
+// console.log(UserWallet.generateNewAccount());
+// console.log(UserWallet.generateNewAccount());
